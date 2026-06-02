@@ -940,4 +940,88 @@ th, td
   text-align: center;
 }
 */
+
+/* ============================================================
+   RESPONSIVE OVERRIDES
+   Replaces the separate *_m.html mobile pages.
+   Breakpoint: 768px (matches Bootstrap's "tablet and below").
+   ============================================================ */
+@media screen and (max-width: 768px) {
+
+  /* --- Navigation: reposition to top-left on small screens --- */
+  .divMenu {
+    margin-left: 5px;
+    margin-top: 5px;
+  }
+
+  /* --- Index header: convert table-cell layout to stacked blocks --- */
+  #fh5co-header .container > div,
+  #fh5co-header .container > div > div {
+    display: block !important;
+    width: 100% !important;
+    float: none !important;
+  }
+  #fh5co-header img[alt="Tafesse Muluneh profile picture"] {
+    max-width: 160px;
+    margin: 0 auto 1em;
+    display: block;
+  }
+
+  /* --- Book section columns: stack vertically --- */
+  .fh5co-feature .col-md-6 {
+    width: 100% !important;
+    float: none !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  .fh5co-feature .fh5co-img {
+    margin-top: 1em !important;
+    padding: 15px !important;
+  }
+  .bookSectionDiv h2,
+  .bookSectionDiv h3,
+  .bookSectionDiv a.btn,
+  .bookSectionDiv .book-description {
+    margin-left: 0 !important;
+  }
+
+  /* --- Downloads grid: 2 columns on mobile --- */
+  .book-tile {
+    width: 100% !important;
+    height: auto !important;
+    margin-top: 1em;
+  }
+  .book-tile-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+  }
+  .book-tile-cell {
+    width: 50% !important;
+    display: block !important;
+  }
+  .book-tile-cell img {
+    height: auto !important;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* --- Contact form: full width on mobile --- */
+  #contact-form .form-control {
+    width: 100% !important;
+  }
+  #contact-form .form-group[style*="width: 935px"] {
+    width: 100% !important;
+  }
+
+  /* --- General: prevent horizontal overflow --- */
+  body {
+    overflow-x: hidden;
+  }
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+}
 /* END of Image overlay CSS */

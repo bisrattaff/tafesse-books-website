@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+__MACOSX/
+
+# Loose screenshots / temp files
+*.png~
+2021-10-03*
+
+# Books (PDFs/Word docs) — large binary files stored on AWS S3, not tracked in git
+show/books/
+
+# IDE
+.vscode/
+
+# SASS build artifacts
+.sass-cache/
+*.css.map
+
+# Windows
+Thumbs.db

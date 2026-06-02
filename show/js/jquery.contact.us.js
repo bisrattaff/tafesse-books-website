@@ -37,8 +37,7 @@ function submitToContactUsAPI(e) {
       type: "POST",
       url: CONTACT_FORM_URL,
       dataType: "json",
-      contentType: "application/json; charset=utf-8",
-      data: JSON.stringify(data),
+      data: data,
       success: function () {
          alert("Thank you for contacting us! Your message has been sent to Tafesse Muluneh. If a follow-up is needed, we will get back to you.");
          document.getElementById("contact-form").reset();

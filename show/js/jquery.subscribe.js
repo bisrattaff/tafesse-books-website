@@ -30,8 +30,7 @@ function submitToSubscriptionAPI(e) {
       type: "POST",
       url: SUBSCRIBE_FORM_URL,
       dataType: "json",
-      contentType: "application/json; charset=utf-8",
-      data: JSON.stringify(data),
+      data: data,
       success: function () {
          alert("Thank you for subscribing! You will be notified by email when there are updates to this site.");
          document.getElementById("subscribe-form").reset();

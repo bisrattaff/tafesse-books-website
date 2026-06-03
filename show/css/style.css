@@ -1090,33 +1090,73 @@ th, td
     padding-right: 10px;
   }
 
-  /* --- Header: stack cells vertically on mobile --- */
-  #fh5co-header .container > div:first-child > div {
-    flex-direction: column !important;
-    align-items: center !important;
+  /* --- Main content container: fill screen width (overrides inline width:70%) --- */
+  #main > .container {
+    width: 95% !important;
+    max-width: none !important;
   }
+
+  /* Reduce oversized top margin on publications heading */
+  #main h1[style*="margin: 100px"] {
+    margin: 30px auto !important;
+  }
+
+  /* --- Reviewer row: 4 columns side by side, no overlap --- */
+  .row.row-pb-md {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    margin-top: 20px !important;
+  }
+  .row.row-pb-md > .col-md-4 {
+    width: 25% !important;
+    flex: 0 0 25% !important;
+    float: none !important;
+    padding: 0 4px !important;
+  }
+  .row.row-pb-md .review figure img {
+    width: 62px !important;
+    height: 62px !important;
+  }
+  /* Hide long review text on mobile — icons/names/stars remain visible */
+  .row.row-pb-md blockquote {
+    display: none !important;
+  }
+
+  /* --- Header: profile pic LEFT, book covers RIGHT, intro text full-width below --- */
+  #fh5co-header .container > div:first-child > div {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: flex-start !important;
+  }
+  /* Profile picture: left column, 45% */
   #fh5co-header .container > div:first-child > div > div:first-child {
-    flex: 0 0 auto !important;
-    width: auto !important;
+    order: 1 !important;
+    flex: 0 0 45% !important;
+    width: 45% !important;
     min-width: unset !important;
   }
   #fh5co-header img[alt="Tafesse Muluneh profile picture"] {
-    width: 180px !important;
-    max-width: 55vw !important;
+    width: 100% !important;
+    max-width: 100% !important;
     min-width: unset !important;
   }
+  /* Intro text: full width, below the two image columns */
   #fh5co-header .container > div:first-child > div > div:nth-child(2) {
-    flex: 0 0 auto !important;
+    order: 3 !important;
+    flex: 0 0 100% !important;
     width: 100% !important;
     min-width: unset !important;
     padding: 10px 15px !important;
     text-align: center !important;
   }
-  /* Hide book cover images on mobile — too small to be useful */
+  /* Book covers: right column, 55%, shown */
   #fh5co-header .container > div:first-child > div > div:nth-child(3) {
-    display: none !important;
+    order: 2 !important;
+    display: block !important;
+    flex: 0 0 55% !important;
+    width: 55% !important;
   }
-  /* Button row: sit below content, centered */
+  /* Button row: centered below header content */
   #fh5co-header .container > div:last-child {
     margin-top: 20px !important;
     text-align: center !important;

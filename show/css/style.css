@@ -1092,7 +1092,7 @@ th, td
 
   /* --- Main content container: fill screen width (overrides inline width:70%) --- */
   #main > .container {
-    width: 95% !important;
+    width: 99% !important;
     max-width: none !important;
   }
 

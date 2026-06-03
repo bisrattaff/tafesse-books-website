@@ -942,6 +942,36 @@ th, td
 */
 
 /* ============================================================
+   ERROR PAGE
+   ============================================================ */
+#error-page {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 130px 30px 60px;
+}
+#error-page img {
+  width: 200px;
+  max-width: 55%;
+  margin-bottom: 25px;
+}
+#error-page h2 {
+  color: #6600cc;
+  font-style: italic;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+#error-page p {
+  color: #555;
+  font-size: 1em;
+  margin-bottom: 12px;
+}
+#error-page .error-email {
+  color: #cc0000;
+  font-weight: bold;
+}
+
+/* ============================================================
    HEADER — always fixed, never squishes at any window width.
    Mirrors the original site behaviour: desktop layout holds at
    all sizes; below 960px a horizontal scrollbar appears instead
@@ -1114,6 +1144,14 @@ th, td
   .container {
     padding-left: 10px;
     padding-right: 10px;
+  }
+
+  /* --- Error page: reduce top padding and font size on mobile --- */
+  #error-page {
+    padding: 80px 20px 40px;
+  }
+  #error-page h2 {
+    font-size: 1.15em;
   }
 
   /* --- Main content container: fill screen width (overrides inline width:70%) --- */

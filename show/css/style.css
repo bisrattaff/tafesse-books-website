@@ -1152,9 +1152,13 @@ th, td
   }
 
   /* --- Contact page: compress vertical space on mobile --- */
-  /* Shrink the large heading top margin and container bottom margin */
+  /* Cancel the negative margin-top that pulls the container above the nav */
+  .container[style*="margin-top: -8em"] {
+    margin-top: 4em !important;
+  }
+  /* Heading: small top margin is enough since container now clears the nav */
   .fh5co-heading h1 {
-    margin-top: 3em !important;
+    margin-top: 1.5em !important;
     font-size: 1.6em !important;
   }
   .fh5co-heading h4,

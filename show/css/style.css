@@ -1149,6 +1149,9 @@ th, td
   }
 
   /* --- Header: large profile pic left, book covers overlaid bottom-right corner --- */
+  #fh5co-header .container > div:first-child {
+    margin-top: 4em !important;
+  }
   #fh5co-header .container > div:first-child > div {
     flex-direction: row !important;
     flex-wrap: wrap !important;

@@ -942,58 +942,59 @@ th, td
 */
 
 /* ============================================================
-   DESKTOP LAYOUT — fixed header, never squishes
-   Converts the table-cell header row to flexbox with fixed cell
-   widths so the profile picture and intro text never move or
-   overlap regardless of browser window width.
-   Below 768px, the mobile responsive layout takes over.
+   HEADER — always fixed, never squishes at any window width.
+   Mirrors the original site behaviour: desktop layout holds at
+   all sizes; below 960px a horizontal scrollbar appears instead
+   of breaking the layout. No media query — applies unconditionally.
    ============================================================ */
-@media screen and (min-width: 769px) {
 
-  body {
-    min-width: 960px;
-  }
+/* Enforce 960px minimum so the page never squishes (same as
+   the original site which redirected to mobile below 960px) */
+body {
+  min-width: 960px;
+}
 
-  /* Convert table/table-row to flex so we can control each cell independently */
-  #fh5co-header .container > div {
-    display: block !important;
-  }
-  #fh5co-header .container > div > div {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    align-items: flex-start !important;
-  }
+/* Convert the table/table-row divs to flex so each cell is fixed */
+#fh5co-header .container > div {
+  display: block !important;
+}
+#fh5co-header .container > div > div {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: flex-start !important;
+}
 
-  /* Profile picture cell: fixed 250px, never shrinks or moves */
-  #fh5co-header .container > div > div > div:first-child {
-    flex: 0 0 250px !important;
-    width: 250px !important;
-    float: none !important;
-  }
-  #fh5co-header img[alt="Tafesse Muluneh profile picture"] {
-    width: 250px !important;
-    max-width: 250px !important;
-  }
+/* Profile picture cell: always 250px, never shrinks or moves */
+#fh5co-header .container > div > div > div:first-child {
+  flex: 0 0 250px !important;
+  width: 250px !important;
+  min-width: 250px !important;
+  float: none !important;
+}
+#fh5co-header img[alt="Tafesse Muluneh profile picture"] {
+  width: 250px !important;
+  max-width: 250px !important;
+  min-width: 250px !important;
+}
 
-  /* Intro text cell: fixed 330px, never shrinks or overlaps image */
-  #fh5co-header .container > div > div > div:nth-child(2) {
-    flex: 0 0 330px !important;
-    width: 330px !important;
-    float: none !important;
-    padding: 0 20px !important;
-  }
+/* Intro text cell: always 330px, never overlaps image */
+#fh5co-header .container > div > div > div:nth-child(2) {
+  flex: 0 0 330px !important;
+  width: 330px !important;
+  min-width: 330px !important;
+  float: none !important;
+  padding: 0 20px !important;
+}
 
-  /* Book covers cell: takes the remaining space to the right */
-  #fh5co-header .container > div > div > div:nth-child(3) {
-    flex: 1 1 auto !important;
-    float: none !important;
-  }
-
+/* Book covers cell: fills remaining space to the right */
+#fh5co-header .container > div > div > div:nth-child(3) {
+  flex: 1 1 auto !important;
+  float: none !important;
 }
 
 /* ============================================================
    RESPONSIVE OVERRIDES
-   Replaces the separate *_m.html mobile pages.
+   Non-header elements (nav, book sections, downloads, contact).
    Breakpoint: 768px (matches Bootstrap's "tablet and below").
    ============================================================ */
 @media screen and (max-width: 768px) {
@@ -1002,19 +1003,6 @@ th, td
   .divMenu {
     margin-left: 5px;
     margin-top: 5px;
-  }
-
-  /* --- Index header: convert table-cell layout to stacked blocks --- */
-  #fh5co-header .container > div,
-  #fh5co-header .container > div > div {
-    display: block !important;
-    width: 100% !important;
-    float: none !important;
-  }
-  #fh5co-header img[alt="Tafesse Muluneh profile picture"] {
-    max-width: 160px;
-    margin: 0 auto 1em;
-    display: block;
   }
 
   /* --- Book section columns: stack vertically --- */

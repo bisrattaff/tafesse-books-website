@@ -954,18 +954,19 @@ body {
   min-width: 960px;
 }
 
-/* Convert the table/table-row divs to flex so each cell is fixed */
-#fh5co-header .container > div {
+/* Convert the table/table-row divs to flex so each cell is fixed.
+   :first-child targets only the table div, NOT the button row below it. */
+#fh5co-header .container > div:first-child {
   display: block !important;
 }
-#fh5co-header .container > div > div {
+#fh5co-header .container > div:first-child > div {
   display: flex !important;
   flex-wrap: nowrap !important;
   align-items: flex-start !important;
 }
 
 /* Profile picture cell: always 250px, never shrinks or moves */
-#fh5co-header .container > div > div > div:first-child {
+#fh5co-header .container > div:first-child > div > div:first-child {
   flex: 0 0 250px !important;
   width: 250px !important;
   min-width: 250px !important;
@@ -978,7 +979,7 @@ body {
 }
 
 /* Intro text cell: always 330px, never overlaps image */
-#fh5co-header .container > div > div > div:nth-child(2) {
+#fh5co-header .container > div:first-child > div > div:nth-child(2) {
   flex: 0 0 330px !important;
   width: 330px !important;
   min-width: 330px !important;
@@ -987,7 +988,7 @@ body {
 }
 
 /* Book covers cell: fills remaining space to the right */
-#fh5co-header .container > div > div > div:nth-child(3) {
+#fh5co-header .container > div:first-child > div > div:nth-child(3) {
   flex: 1 1 auto !important;
   float: none !important;
 }

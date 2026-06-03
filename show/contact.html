@@ -64,27 +64,23 @@
         </div>
       </div>
       <div class="get-subscribe">
-        <form class="form-inline" id="contact-form" method="post" style="margin-left: 80px; width: 100%;">
-          <div>
-            <div class="form-group"> <label for="name" class="sr-only">Name</label>
-              <input class="form-control" id="name-input" name="name" placeholder="Name (ስም)" style="width: 60%;" type="text">
-            </div>
+        <form id="contact-form" method="post" style="margin-left: 80px; width: 100%;">
+          <div class="form-group">
+            <label for="name" class="sr-only">Name</label>
+            <input class="form-control" id="name-input" name="name" placeholder="Name (ስም)" style="width: 60%;" type="text">
           </div>
-          <div>
-            <div class="form-group"> <label for="phone" class="sr-only">Phone</label>
-              <input class="form-control" id="phone-input" name="phone" placeholder="Phone (ስልክ)" style="width: 60%;" type="phone">
-            </div>
+          <div class="form-group">
+            <label for="phone" class="sr-only">Phone</label>
+            <input class="form-control" id="phone-input" name="phone" placeholder="Phone (ስልክ)" style="width: 60%;" type="phone">
           </div>
-          <div>
-            <div class="form-group"> <label for="email" class="sr-only">Email</label>
-              <input class="form-control" id="email-input" name="email" placeholder="Email (ኢሜይል)" style="width: 60%;" type="email">
-            </div>
+          <div class="form-group">
+            <label for="email" class="sr-only">Email</label>
+            <input class="form-control" id="email-input" name="email" placeholder="Email (ኢሜይል)" style="width: 60%;" type="email">
           </div>
-          <div>
-            <div class="form-group" style="width: 935px;"> <label for="description" class="sr-only">Message</label>
-              <textarea class="form-control" id="description-input" name="message" placeholder="Your note (መልእክት)" rows="6"
-                style="width: 60%; height: 108px;"></textarea>
-            </div>
+          <div class="form-group">
+            <label for="description" class="sr-only">Message</label>
+            <textarea class="form-control" id="description-input" name="message" placeholder="Your note (መልእክት)" rows="6"
+              style="width: 60%; height: 108px;"></textarea>
           </div>
           <div style="margin-top: 1em;">
             <button type="submit" id="send-button" class="btn btn-default" onClick="submitToContactUsAPI(event)"

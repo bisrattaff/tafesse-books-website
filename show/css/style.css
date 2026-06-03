@@ -994,6 +994,10 @@ body {
 }
 
 /* ===  Buy / Download buttons: always side by side, immune to Bootstrap grid  === */
+/* Cancel the inline margin-top: -140px that caused buttons to jump over text */
+#fh5co-header .container > div:last-child {
+  margin-top: 10px !important;
+}
 /* Override Bootstrap col-md-6 so it doesn't react to viewport width */
 #fh5co-header .container > div:last-child .col-md-6,
 #fh5co-header .container > div:last-child .col-sm-6 {

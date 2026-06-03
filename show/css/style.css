@@ -942,6 +942,23 @@ th, td
 */
 
 /* ============================================================
+   DESKTOP MINIMUM WIDTH
+   The header layout was designed for 960px+. On desktop, enforce
+   a minimum so the layout holds rather than squishing. Below 768px
+   (phones/tablets), the responsive layout below takes over instead.
+   ============================================================ */
+@media screen and (min-width: 769px) {
+  body {
+    min-width: 960px;
+  }
+  /* Profile picture: fixed size, does not shrink on desktop */
+  #fh5co-header img[alt="Tafesse Muluneh profile picture"] {
+    width: 250px;
+    min-width: 220px;
+  }
+}
+
+/* ============================================================
    RESPONSIVE OVERRIDES
    Replaces the separate *_m.html mobile pages.
    Breakpoint: 768px (matches Bootstrap's "tablet and below").

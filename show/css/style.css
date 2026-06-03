@@ -1082,12 +1082,20 @@ th, td
     max-width: 100%;
   }
 
-  /* --- Contact form: full width on mobile, cancel left indent --- */
+  /* --- Contact form: stack fields vertically, full width on mobile --- */
   #contact-form {
     margin-left: 0 !important;
+    display: block !important;
+  }
+  #contact-form .form-group {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 10px !important;
   }
   #contact-form .form-control {
+    display: block !important;
     width: 100% !important;
+    box-sizing: border-box !important;
   }
   #contact-form .form-group[style*="width: 935px"] {
     width: 100% !important;

@@ -1155,11 +1155,11 @@ th, td
     align-items: flex-start !important;
     position: relative !important;
   }
-  /* Profile picture: dominant left column, 62% of width */
+  /* Profile picture: dominant left column, 67% of width */
   #fh5co-header .container > div:first-child > div > div:first-child {
     order: 1 !important;
-    flex: 0 0 62% !important;
-    width: 62% !important;
+    flex: 0 0 67% !important;
+    width: 67% !important;
     min-width: unset !important;
   }
   #fh5co-header img[alt="Tafesse Muluneh profile picture"] {
@@ -1167,7 +1167,7 @@ th, td
     max-width: 100% !important;
     min-width: unset !important;
   }
-  /* Intro text: full width below */
+  /* Intro text: full width below, above book covers */
   #fh5co-header .container > div:first-child > div > div:nth-child(2) {
     order: 3 !important;
     flex: 0 0 100% !important;
@@ -1175,13 +1175,15 @@ th, td
     min-width: unset !important;
     padding: 10px 15px !important;
     text-align: center !important;
+    position: relative !important;
+    z-index: 3 !important;
   }
-  /* Book covers: absolutely overlaid on right side of profile pic, hanging below */
+  /* Book covers: overlaid on right side, shifted slightly left and higher */
   #fh5co-header .container > div:first-child > div > div:nth-child(3) {
     position: absolute !important;
     display: block !important;
-    right: 0 !important;
-    top: 110px !important;
+    right: 8% !important;
+    top: 85px !important;
     width: 52% !important;
     z-index: 2 !important;
     flex: unset !important;

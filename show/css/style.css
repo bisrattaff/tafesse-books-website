@@ -1041,9 +1041,18 @@ th, td
     padding-left: 15px !important;
     padding-right: 15px !important;
   }
+  /* Biography page: cancel inline margin-left: 5em that pushes content right */
+  .fh5co-feature .fh5co-copy {
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding: 10px 15px !important;
+  }
   .fh5co-feature .fh5co-img {
+    width: 95% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     margin-top: 1em !important;
-    padding: 15px !important;
+    padding: 10px !important;
   }
   .bookSectionDiv h2,
   .bookSectionDiv h3,

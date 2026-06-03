@@ -1048,11 +1048,17 @@ th, td
     padding: 10px 15px !important;
   }
   .fh5co-feature .fh5co-img {
-    width: 95% !important;
+    display: block !important;
+    width: 100% !important;
     margin-left: auto !important;
     margin-right: auto !important;
     margin-top: 1em !important;
-    padding: 10px !important;
+    padding: 5px !important;
+    text-align: center !important;
+  }
+  .fh5co-feature .fh5co-img img {
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .bookSectionDiv h2,
   .bookSectionDiv h3,

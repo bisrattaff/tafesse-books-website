@@ -1148,17 +1148,18 @@ th, td
     display: none !important;
   }
 
-  /* --- Header: profile pic LEFT, book covers RIGHT, intro text full-width below --- */
+  /* --- Header: large profile pic left, book covers overlaid bottom-right corner --- */
   #fh5co-header .container > div:first-child > div {
     flex-direction: row !important;
     flex-wrap: wrap !important;
     align-items: flex-start !important;
+    position: relative !important;
   }
-  /* Profile picture: left column, 50% */
+  /* Profile picture: dominant left column, 62% of width */
   #fh5co-header .container > div:first-child > div > div:first-child {
     order: 1 !important;
-    flex: 0 0 50% !important;
-    width: 50% !important;
+    flex: 0 0 62% !important;
+    width: 62% !important;
     min-width: unset !important;
   }
   #fh5co-header img[alt="Tafesse Muluneh profile picture"] {
@@ -1166,7 +1167,7 @@ th, td
     max-width: 100% !important;
     min-width: unset !important;
   }
-  /* Intro text: full width, below the two image columns */
+  /* Intro text: full width below */
   #fh5co-header .container > div:first-child > div > div:nth-child(2) {
     order: 3 !important;
     flex: 0 0 100% !important;
@@ -1175,12 +1176,23 @@ th, td
     padding: 10px 15px !important;
     text-align: center !important;
   }
-  /* Book covers: right column, 50%, shown */
+  /* Book covers: absolutely overlaid on right side of profile pic, hanging below */
   #fh5co-header .container > div:first-child > div > div:nth-child(3) {
-    order: 2 !important;
+    position: absolute !important;
     display: block !important;
-    flex: 0 0 50% !important;
-    width: 50% !important;
+    right: 0 !important;
+    top: 110px !important;
+    width: 52% !important;
+    z-index: 2 !important;
+    flex: unset !important;
+  }
+  #fh5co-header .container > div:first-child > div > div:nth-child(3) .row {
+    margin: 0 !important;
+  }
+  #fh5co-header .container > div:first-child > div > div:nth-child(3) [class*="col-"] {
+    width: 100% !important;
+    float: none !important;
+    padding: 0 !important;
   }
   /* Button row: centered below header content */
   #fh5co-header .container > div:last-child {

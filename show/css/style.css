@@ -1148,11 +1148,11 @@ th, td
     flex-wrap: wrap !important;
     align-items: flex-start !important;
   }
-  /* Profile picture: left column, 45% */
+  /* Profile picture: left column, 50% */
   #fh5co-header .container > div:first-child > div > div:first-child {
     order: 1 !important;
-    flex: 0 0 45% !important;
-    width: 45% !important;
+    flex: 0 0 50% !important;
+    width: 50% !important;
     min-width: unset !important;
   }
   #fh5co-header img[alt="Tafesse Muluneh profile picture"] {
@@ -1169,12 +1169,12 @@ th, td
     padding: 10px 15px !important;
     text-align: center !important;
   }
-  /* Book covers: right column, 55%, shown */
+  /* Book covers: right column, 50%, shown */
   #fh5co-header .container > div:first-child > div > div:nth-child(3) {
     order: 2 !important;
     display: block !important;
-    flex: 0 0 55% !important;
-    width: 55% !important;
+    flex: 0 0 50% !important;
+    width: 50% !important;
   }
   /* Button row: centered below header content */
   #fh5co-header .container > div:last-child {

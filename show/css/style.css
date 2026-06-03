@@ -1086,7 +1086,7 @@ th, td
     padding-left: 15px !important;
     padding-right: 15px !important;
   }
-  /* Biography page: cancel inline margin-left: 5em that pushes content right */
+  /* Biography page: cancel inline margins and center images */
   .fh5co-feature .fh5co-copy {
     margin-left: 0 !important;
     width: 100% !important;
@@ -1100,10 +1100,20 @@ th, td
     margin-top: 1em !important;
     padding: 5px !important;
     text-align: center !important;
+    float: none !important;
+  }
+  .fh5co-feature .fh5co-img figure,
+  .fh5co-feature .fh5co-img .fh5co-figure {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
   .fh5co-feature .fh5co-img img {
+    display: block !important;
     width: 100% !important;
     max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
   .bookSectionDiv h2,
   .bookSectionDiv h3,

@@ -972,6 +972,21 @@ th, td
 }
 
 /* ============================================================
+   CONTACT FORM
+   padding-left indents on desktop; mobile overrides to full width.
+   Using padding (not margin) keeps everything inside the container.
+   ============================================================ */
+#contact-form {
+  padding-left: 60px;
+}
+#contact-form .form-control {
+  width: 65%;
+}
+#contact-form textarea.form-control {
+  height: 108px;
+}
+
+/* ============================================================
    HEADER — always fixed, never squishes at any window width.
    Mirrors the original site behaviour: desktop layout holds at
    all sizes; below 960px a horizontal scrollbar appears instead
@@ -1118,23 +1133,12 @@ th, td
     max-width: 100%;
   }
 
-  /* --- Contact form: stack fields vertically, full width on mobile --- */
-  #contact-form {
-    margin-left: 0 !important;
-    display: block !important;
-  }
-  #contact-form .form-group {
-    display: block !important;
-    width: 100% !important;
-    margin-bottom: 10px !important;
-  }
+  /* --- Contact form: full width on mobile --- */
   #contact-form .form-control {
-    display: block !important;
     width: 100% !important;
-    box-sizing: border-box !important;
   }
-  #contact-form .form-group[style*="width: 935px"] {
-    width: 100% !important;
+  #contact-form textarea.form-control {
+    height: 108px !important;
   }
 
   /* --- General: prevent horizontal overflow --- */

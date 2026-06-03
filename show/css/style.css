@@ -856,6 +856,14 @@ a
 	border: 0px;
 }
 
+/* All book cover images: uniform 210×300px regardless of natural image size */
+.book-tile-cell img {
+  width: 210px !important;
+  height: 300px !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
 
 th, td
 {
@@ -1139,8 +1147,8 @@ th, td
   }
   .book-tile-cell img {
     height: auto !important;
-    width: 100%;
-    max-width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   /* --- Contact page: compress vertical space on mobile --- */

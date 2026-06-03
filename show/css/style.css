@@ -948,10 +948,11 @@ th, td
    of breaking the layout. No media query — applies unconditionally.
    ============================================================ */
 
-/* Enforce 960px minimum so the page never squishes (same as
-   the original site which redirected to mobile below 960px) */
-body {
-  min-width: 960px;
+/* Enforce 960px minimum on desktop only — lets mobile use natural viewport width */
+@media (min-width: 769px) {
+  body {
+    min-width: 960px;
+  }
 }
 
 /* Convert the table/table-row divs to flex so each cell is fixed.
@@ -1087,6 +1088,43 @@ body {
   .container {
     padding-left: 10px;
     padding-right: 10px;
+  }
+
+  /* --- Header: stack cells vertically on mobile --- */
+  #fh5co-header .container > div:first-child > div {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  #fh5co-header .container > div:first-child > div > div:first-child {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: unset !important;
+  }
+  #fh5co-header img[alt="Tafesse Muluneh profile picture"] {
+    width: 180px !important;
+    max-width: 55vw !important;
+    min-width: unset !important;
+  }
+  #fh5co-header .container > div:first-child > div > div:nth-child(2) {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    min-width: unset !important;
+    padding: 10px 15px !important;
+    text-align: center !important;
+  }
+  /* Hide book cover images on mobile — too small to be useful */
+  #fh5co-header .container > div:first-child > div > div:nth-child(3) {
+    display: none !important;
+  }
+  /* Button row: sit below content, centered */
+  #fh5co-header .container > div:last-child {
+    margin-top: 20px !important;
+    text-align: center !important;
+  }
+  #fh5co-header .container > div:last-child .intro > div {
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
   }
 
 }

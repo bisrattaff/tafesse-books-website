@@ -993,6 +993,29 @@ body {
   float: none !important;
 }
 
+/* ===  Buy / Download buttons: always side by side, immune to Bootstrap grid  === */
+/* Override Bootstrap col-md-6 so it doesn't react to viewport width */
+#fh5co-header .container > div:last-child .col-md-6,
+#fh5co-header .container > div:last-child .col-sm-6 {
+  width: auto !important;
+  float: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+/* Make the two-button inner wrapper a flexbox row instead of using floats */
+#fh5co-header .container > div:last-child .intro > div {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 15px !important;
+  width: auto !important;
+}
+/* Each button div: auto width, no float */
+#fh5co-header .container > div:last-child .intro > div > div {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  float: none !important;
+}
+
 /* ============================================================
    RESPONSIVE OVERRIDES
    Non-header elements (nav, book sections, downloads, contact).

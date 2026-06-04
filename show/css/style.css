@@ -962,24 +962,25 @@ th, td
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: none;
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.35);
+  border: 2px solid #52d3aa;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0 4px rgba(82, 211, 170, 0.25), 3px 3px 12px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s, transform 0.15s;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
   padding: 0;
 }
 #search-btn:hover {
   background: #fff;
   transform: scale(1.08);
+  box-shadow: 0 0 0 5px rgba(82, 211, 170, 0.35), 4px 4px 14px rgba(0, 0, 0, 0.3);
 }
 #search-btn svg {
   width: 20px;
   height: 20px;
-  stroke: #444;
+  stroke: #52d3aa;
   fill: none;
   stroke-width: 2.5;
   stroke-linecap: round;
@@ -1345,6 +1346,12 @@ th, td
   .container {
     padding-left: 10px;
     padding-right: 10px;
+  }
+
+  /* Search button: move below nav buttons on mobile (nav ends ~51px from top) */
+  #search-btn {
+    top: 62px;
+    right: 12px;
   }
 
   /* --- Error page: reduce top padding and font size on mobile --- */

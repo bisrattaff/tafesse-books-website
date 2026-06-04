@@ -1281,6 +1281,10 @@ th, td
   .bookSectionDiv .book-description {
     margin-left: 0 !important;
   }
+  /* Compact top spacing on mobile — desktop keeps its original inline values */
+  .bookSectionDiv .fh5co-copy-inner h2 {
+    margin-top: 2em !important;
+  }
 
   /* --- Downloads grid: 2 columns on mobile --- */
   .book-tile {

@@ -1103,6 +1103,32 @@ th, td
 }
 
 /* ============================================================
+   PUBLISHED JOURNAL SECTION
+   ============================================================ */
+#published-journal {
+  background: #f7f7f7;
+  border-top: 3px solid #52d3aa;
+  border-bottom: 3px solid #52d3aa;
+}
+.academia-icon-wrapper {
+  background: #2d2d2d;
+  width: 150px;
+  height: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: background 0.2s;
+}
+.academia-icon-wrapper:hover {
+  background: #444;
+}
+.academia-logo {
+  width: 118px;
+}
+
+/* ============================================================
    ERROR PAGE
    ============================================================ */
 #error-page {

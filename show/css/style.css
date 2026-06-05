@@ -953,24 +953,23 @@ th, td
    SEARCH — floating button + modal
    ============================================================ */
 
-/* Floating magnifying-glass button */
+/* Search button — inline inside .divMenu on desktop, fixed below nav on mobile */
 #search-btn {
-  position: fixed;
-  top: 18px;
-  right: 5%;
   z-index: 200;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 2px solid #52d3aa;
   background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 0 0 4px rgba(82, 211, 170, 0.25), 3px 3px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 3px rgba(82, 211, 170, 0.25);
   cursor: pointer;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
   padding: 0;
+  margin-left: 10px;
+  vertical-align: middle;
 }
 #search-btn:hover {
   background: #fff;
@@ -1378,10 +1377,13 @@ th, td
     padding-right: 10px;
   }
 
-  /* Search button: move below nav buttons on mobile (nav ends ~51px from top) */
+  /* Search button: break out of nav flow on mobile, sit below nav buttons */
   #search-btn {
+    position: fixed;
     top: 62px;
     right: 12px;
+    margin-left: 0;
+    display: flex;
   }
 
   /* --- Error page: reduce top padding and font size on mobile --- */

@@ -1185,8 +1185,8 @@ th, td
   margin-bottom: 10px;
 }
 .journal-main-icon {
-  width: 90px;
-  height: 128px;
+  width: 112px;
+  height: 160px;
   object-fit: cover;
   border-radius: 4px;
   box-shadow: 3px 3px 10px rgba(0,0,0,0.25);
@@ -1194,11 +1194,11 @@ th, td
 }
 .academia-badge {
   position: absolute;
-  bottom: -10px;
-  right: -18px;
-  width: 58px;
-  border-radius: 5px;
-  box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+  bottom: -16px;
+  right: -28px;
+  width: 80px;
+  border-radius: 6px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
   border: 2px solid #fff;
 }
 

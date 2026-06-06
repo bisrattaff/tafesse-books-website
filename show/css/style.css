@@ -1101,6 +1101,78 @@ th, td
   color: #3ab898;
 }
 
+/* --- Advanced Search panel (inside the modal) --- */
+.adv-divider {
+  border-top: 1px dashed #ddd;
+  margin-top: 14px;
+  padding-top: 10px;
+  text-align: center;
+}
+#adv-toggle-btn {
+  background: none;
+  border: none;
+  color: #52d3aa;
+  font-size: 0.85em;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 2px 6px;
+}
+#adv-toggle-btn:hover { text-decoration: underline; }
+#adv-search-section {
+  display: none;
+  margin-top: 10px;
+}
+.adv-hint {
+  font-size: 0.78em;
+  color: #999;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.adv-input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+#adv-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9em;
+  outline: none;
+  box-sizing: border-box;
+}
+#adv-input:focus { border-color: #52d3aa; }
+#adv-submit-btn {
+  padding: 8px 14px;
+  background: #52d3aa;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.88em;
+  cursor: pointer;
+  white-space: nowrap;
+}
+#adv-submit-btn:disabled { opacity: 0.6; cursor: default; }
+.adv-answer {
+  background: #f0fdf8;
+  border-left: 3px solid #52d3aa;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 0.88em;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 6px;
+  white-space: pre-wrap;
+}
+.adv-sources {
+  font-size: 0.76em;
+  color: #888;
+  margin: 0;
+}
+.adv-loading { color: #aaa; font-style: italic; text-align: center; font-size: 0.85em; }
+.adv-error   { color: #c00; font-size: 0.85em; }
+
 /* ============================================================
    PUBLISHED JOURNAL SECTION
    ============================================================ */

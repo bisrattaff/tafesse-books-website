@@ -953,8 +953,9 @@ th, td
    SEARCH — floating button + modal
    ============================================================ */
 
-/* Search button — inline inside .divMenu on desktop, fixed below nav on mobile */
+/* Search button — JS positions it after the nav on desktop, CSS handles mobile */
 #search-btn {
+  position: fixed;
   z-index: 200;
   width: 40px;
   height: 40px;
@@ -963,13 +964,11 @@ th, td
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 0 0 3px rgba(82, 211, 170, 0.25);
   cursor: pointer;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
   padding: 0;
-  margin-left: 10px;
-  vertical-align: middle;
 }
 #search-btn:hover {
   background: #fff;

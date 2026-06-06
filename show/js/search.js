@@ -1,4 +1,26 @@
+// Position search button just to the right of the nav bar on desktop
+function positionSearchBtn() {
+  var btn  = document.getElementById('search-btn');
+  var menu = document.querySelector('.divMenu');
+  if (!btn || !menu) return;
+
+  if (window.innerWidth >= 769) {
+    var rect = menu.getBoundingClientRect();
+    btn.style.left = (rect.right + 12) + 'px';
+    btn.style.top  = (rect.top + (rect.height - 40) / 2) + 'px';
+    btn.style.right = 'auto';
+  } else {
+    // Mobile: CSS handles position (top:62px right:12px)
+    btn.style.left  = '';
+    btn.style.top   = '';
+    btn.style.right = '';
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
+  positionSearchBtn();
+  window.addEventListener('resize', positionSearchBtn);
+
   var btn    = document.getElementById('search-btn');
   var modal  = document.getElementById('search-modal');
   var closeBtn = document.getElementById('search-close');

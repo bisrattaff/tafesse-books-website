@@ -86,7 +86,9 @@ document.addEventListener('DOMContentLoaded', function () {
     results.innerHTML = '';
     if (clearBtn) clearBtn.style.display = 'none';
     if (advSection) advSection.style.display = 'none';
-    // Only go back in history if we pushed a state (not already popped)
+    // Re-enable quick search in case AI mode was active
+    var titleInput = document.querySelector('.search-title-input');
+    if (titleInput) titleInput.classList.remove('search-disabled');
     if (!fromPopstate && history.state && history.state.searchModal) {
       history.back();
     }

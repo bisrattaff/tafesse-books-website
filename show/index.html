@@ -830,27 +830,32 @@
   <!-- Search modal -->
   <div id="search-modal" role="dialog" aria-modal="true" aria-label="Search books">
     <div class="search-card">
-      <div class="search-header">
-        <span>Quick Search</span>
+      <div class="search-header-row">
+        <div class="search-title-input">
+          <span class="search-title">Quick Search</span>
+          <div class="search-input-wrapper">
+            <input type="text" id="search-input" placeholder="e.g. chess, religion, space ..." autocomplete="off">
+            <button class="search-clear-btn" title="Clear">&times;</button>
+          </div>
+        </div>
         <button id="search-close" aria-label="Close">&times;</button>
       </div>
+      <div id="search-results"></div>
       <div class="adv-top">
         <button id="adv-toggle-btn">&#9889; Ask the Books (AI Powered)</button>
         <p class="adv-tagline">AI trained on Tafesse's books!</p>
       </div>
       <div id="adv-search-section">
+        <div class="adv-section-header">
+          <span>&#9889; Ask the Books</span>
+          <button id="adv-close-btn" aria-label="Close AI search">&times;</button>
+        </div>
         <div class="adv-input-row">
           <input type="text" id="adv-input" placeholder="e.g. What does Tafesse say about nuclear energy?">
           <button id="adv-submit-btn">Ask</button>
         </div>
         <div id="adv-result"></div>
       </div>
-      <div class="search-section-divider"></div>
-      <div class="search-input-wrapper">
-        <input type="text" id="search-input" placeholder="e.g. chess, religion, nuclear, space ..." autocomplete="off">
-        <button class="search-clear-btn" title="Clear">&times;</button>
-      </div>
-      <div id="search-results"></div>
     </div>
   </div>
   <script src="js/search-data.js"></script>

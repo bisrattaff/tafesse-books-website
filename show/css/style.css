@@ -1009,17 +1009,29 @@ th, td
   overflow-y: auto;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
-.search-header {
+/* Header row: title + input inline, × at far right */
+.search-header-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
+  gap: 8px;
+  margin-bottom: 10px;
 }
-.search-header span {
-  font-size: 1.1em;
+.search-title-input {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.25s;
+}
+.search-title-input.search-disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+.search-title {
+  font-size: 1em;
   font-weight: 700;
   color: #333;
-  letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 #search-close {
   background: none;
@@ -1030,45 +1042,40 @@ th, td
   cursor: pointer;
   padding: 0 4px;
   transition: color 0.2s;
+  flex-shrink: 0;
 }
-#search-close:hover {
-  color: #333;
-}
+#search-close:hover { color: #333; }
 .search-input-wrapper {
   position: relative;
-  margin-bottom: 14px;
+  flex: 1;
 }
 #search-input {
   width: 100%;
-  padding: 10px 36px 10px 14px;
+  padding: 8px 30px 8px 12px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  font-size: 1em;
+  font-size: 0.9em;
   outline: none;
   box-sizing: border-box;
   transition: border-color 0.2s;
 }
-#search-input:focus {
-  border-color: #52d3aa;
-}
+#search-input:focus { border-color: #52d3aa; }
 .search-clear-btn {
   position: absolute;
-  right: 10px;
+  right: 8px;
   top: 50%;
   transform: translateY(-50%);
   background: none;
   border: none;
   color: #aaa;
-  font-size: 1.3em;
+  font-size: 1.2em;
   cursor: pointer;
   display: none;
   padding: 0;
   line-height: 1;
 }
 .search-clear-btn:hover { color: #555; }
-#search-results {
-  margin-top: 0;
-}
+#search-results { margin-top: 4px; }
 .search-no-results {
   text-align: center;
   color: #999;
@@ -1119,44 +1126,67 @@ th, td
   color: #3ab898;
 }
 
-/* --- Ask the Books — prominent top button --- */
+/* --- Ask the Books button row --- */
 .adv-top {
-  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
 }
 #adv-toggle-btn {
-  display: block;
-  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   background: #52d3aa;
   color: #fff;
   border: none;
   border-radius: 8px;
-  padding: 11px 16px;
-  font-size: 1em;
+  padding: 8px 14px;
+  font-size: 0.88em;
   font-weight: 700;
   cursor: pointer;
-  text-align: center;
-  transition: background 0.2s, transform 0.1s;
-  letter-spacing: 0.3px;
+  white-space: nowrap;
+  transition: background 0.2s;
 }
-#adv-toggle-btn:hover {
-  background: #3ab898;
-  transform: scale(1.01);
-}
+#adv-toggle-btn:hover { background: #3ab898; }
 .adv-tagline {
-  font-size: 0.76em;
-  color: #888;
-  text-align: center;
-  margin: 5px 0 0;
+  font-size: 0.74em;
+  color: #999;
   font-style: italic;
+  margin: 0;
+  line-height: 1.3;
 }
-.search-section-divider {
-  border-top: 1px solid #eee;
-  margin: 12px 0 10px;
-}
+
+/* AI section */
 #adv-search-section {
   display: none;
   margin-top: 10px;
+  padding: 12px;
+  background: #f8fffe;
+  border: 1px solid #d0f0e8;
+  border-radius: 8px;
 }
+.adv-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.85em;
+  font-weight: 700;
+  color: #3ab898;
+}
+#adv-close-btn {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+#adv-close-btn:hover { color: #555; }
 .adv-input-row {
   display: flex;
   gap: 8px;

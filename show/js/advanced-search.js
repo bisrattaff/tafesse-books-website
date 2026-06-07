@@ -11,20 +11,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (!toggleBtn) return;
 
-  // Show/hide Ask AI panel; collapse quick search when opening
+  var closeAiBtn = document.getElementById('adv-close-btn');
+
+  // Open Ask the Books — gray out quick search
   toggleBtn.addEventListener('click', function () {
-    var hidden = section.style.display === 'none' || section.style.display === '';
-    section.style.display = hidden ? 'block' : 'none';
-    if (hidden) {
-      var quickResults = document.getElementById('search-results');
-      var quickInput   = document.getElementById('search-input');
-      var clearBtn     = document.querySelector('.search-clear-btn');
-      if (quickResults) quickResults.innerHTML = '';
-      if (quickInput)   quickInput.value = '';
-      if (clearBtn)     clearBtn.style.display = 'none';
-      input.focus();
-    }
+    section.style.display = 'block';
+    clearQuickSearch();
+    var titleInput = document.querySelector('.search-title-input');
+    if (titleInput) titleInput.classList.add('search-disabled');
+    input.focus();
   });
+
+  // Close Ask the Books — re-enable quick search
+  if (closeAiBtn) {
+    closeAiBtn.addEventListener('click', function () {
+      section.style.display = 'none';
+      resultDiv.innerHTML = '';
+      input.value = '';
+      var titleInput = document.querySelector('.search-title-input');
+      if (titleInput) titleInput.classList.remove('search-disabled');
+      document.getElementById('search-input').focus();
+    });
+  }
+
+  function clearQuickSearch() {
+    var quickResults = document.getElementById('search-results');
+    var quickInput   = document.getElementById('search-input');
+    var clearBtn     = document.querySelector('.search-clear-btn');
+    if (quickResults) quickResults.innerHTML = '';
+    if (quickInput)   quickInput.value = '';
+    if (clearBtn)     clearBtn.style.display = 'none';
+  }
 
   // Submit on button click or Enter key
   submitBtn.addEventListener('click', runSearch);

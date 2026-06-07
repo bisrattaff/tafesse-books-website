@@ -1119,32 +1119,43 @@ th, td
   color: #3ab898;
 }
 
-/* --- Advanced Search panel (inside the modal) --- */
-.adv-divider {
-  border-top: 1px dashed #ddd;
-  margin-top: 14px;
-  padding-top: 10px;
-  text-align: center;
+/* --- Ask the Books — prominent top button --- */
+.adv-top {
+  margin-bottom: 4px;
 }
 #adv-toggle-btn {
-  background: none;
+  display: block;
+  width: 100%;
+  background: #52d3aa;
+  color: #fff;
   border: none;
-  color: #52d3aa;
-  font-size: 0.85em;
-  font-weight: 600;
+  border-radius: 8px;
+  padding: 11px 16px;
+  font-size: 1em;
+  font-weight: 700;
   cursor: pointer;
-  padding: 2px 6px;
+  text-align: center;
+  transition: background 0.2s, transform 0.1s;
+  letter-spacing: 0.3px;
 }
-#adv-toggle-btn:hover { text-decoration: underline; }
+#adv-toggle-btn:hover {
+  background: #3ab898;
+  transform: scale(1.01);
+}
+.adv-tagline {
+  font-size: 0.76em;
+  color: #888;
+  text-align: center;
+  margin: 5px 0 0;
+  font-style: italic;
+}
+.search-section-divider {
+  border-top: 1px solid #eee;
+  margin: 12px 0 10px;
+}
 #adv-search-section {
   display: none;
   margin-top: 10px;
-}
-.adv-hint {
-  font-size: 0.78em;
-  color: #999;
-  margin-bottom: 8px;
-  line-height: 1.4;
 }
 .adv-input-row {
   display: flex;

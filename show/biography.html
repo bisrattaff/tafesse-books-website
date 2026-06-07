@@ -290,22 +290,23 @@
         <span>Quick Search</span>
         <button id="search-close" aria-label="Close">&times;</button>
       </div>
-      <div class="search-input-wrapper">
-        <input type="text" id="search-input" placeholder="e.g. chess, religion, nuclear, space ..." autocomplete="off">
-        <button class="search-clear-btn" title="Clear">&times;</button>
-      </div>
-      <div id="search-results"></div>
-      <div class="adv-divider">
-        <button id="adv-toggle-btn">&#9889; Ask AI</button>
+      <div class="adv-top">
+        <button id="adv-toggle-btn">&#9889; Ask the Books (AI Powered)</button>
+        <p class="adv-tagline">AI trained on Tafesse's books!</p>
       </div>
       <div id="adv-search-section">
-        <p class="adv-hint">Ask a question in natural language — Claude will search the book content and answer.</p>
         <div class="adv-input-row">
           <input type="text" id="adv-input" placeholder="e.g. What does Tafesse say about nuclear energy?">
           <button id="adv-submit-btn">Ask</button>
         </div>
         <div id="adv-result"></div>
       </div>
+      <div class="search-section-divider"></div>
+      <div class="search-input-wrapper">
+        <input type="text" id="search-input" placeholder="e.g. chess, religion, nuclear, space ..." autocomplete="off">
+        <button class="search-clear-btn" title="Clear">&times;</button>
+      </div>
+      <div id="search-results"></div>
     </div>
   </div>
   <script src="js/search-data.js"></script>

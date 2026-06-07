@@ -1,6 +1,6 @@
 // Advanced Search — powered by Claude API via AWS Lambda
 // Set ADVANCED_SEARCH_URL to your API Gateway endpoint after deployment.
-var ADVANCED_SEARCH_URL = '';  // <-- paste your API Gateway URL here after setup
+var ADVANCED_SEARCH_URL = 'https://k0d8fif32g.execute-api.us-west-2.amazonaws.com/taf-book-search-stage/search';  // <-- paste your API Gateway URL here after setup
 
 document.addEventListener('DOMContentLoaded', function () {
   var toggleBtn  = document.getElementById('adv-toggle-btn');

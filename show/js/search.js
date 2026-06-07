@@ -10,7 +10,6 @@ function positionSearchBtn() {
     btn.style.top  = (rect.top + (rect.height - 40) / 2) + 'px';
     btn.style.right = 'auto';
   } else {
-    // Mobile: CSS handles position (top:62px right:12px)
     btn.style.left  = '';
     btn.style.top   = '';
     btn.style.right = '';
@@ -21,40 +20,76 @@ document.addEventListener('DOMContentLoaded', function () {
   positionSearchBtn();
   window.addEventListener('resize', positionSearchBtn);
 
-  var btn    = document.getElementById('search-btn');
-  var modal  = document.getElementById('search-modal');
+  var btn      = document.getElementById('search-btn');
+  var modal    = document.getElementById('search-modal');
   var closeBtn = document.getElementById('search-close');
-  var input  = document.getElementById('search-input');
-  var results = document.getElementById('search-results');
+  var input    = document.getElementById('search-input');
+  var clearBtn = document.querySelector('.search-clear-btn');
+  var results  = document.getElementById('search-results');
+  var advSection = document.getElementById('adv-search-section');
 
   if (!btn || !modal) return;
 
   btn.addEventListener('click', openModal);
   closeBtn.addEventListener('click', closeModal);
 
+  // Close on backdrop click
   modal.addEventListener('click', function (e) {
     if (e.target === modal) closeModal();
   });
 
+  // Close on Escape key
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeModal();
   });
 
+  // Back button closes modal on mobile
+  window.addEventListener('popstate', function () {
+    if (modal.style.display === 'flex') closeModal(true);
+  });
+
+  // Clear button
+  if (clearBtn) {
+    clearBtn.addEventListener('click', function () {
+      input.value = '';
+      results.innerHTML = '';
+      clearBtn.style.display = 'none';
+      input.focus();
+    });
+  }
+
+  // Live search
   input.addEventListener('input', function () {
-    runSearch(this.value.trim().toLowerCase());
+    var query = this.value.trim().toLowerCase();
+    // Show/hide clear button
+    if (clearBtn) clearBtn.style.display = query.length ? 'block' : 'none';
+    // Collapse Ask AI when typing in quick search
+    if (advSection && advSection.style.display === 'block') {
+      advSection.style.display = 'none';
+    }
+    runSearch(query);
   });
 
   function openModal() {
     modal.style.display = 'flex';
     input.value = '';
     results.innerHTML = '';
+    if (clearBtn) clearBtn.style.display = 'none';
+    // Push state so back button can close the modal
+    history.pushState({ searchModal: true }, '');
     setTimeout(function () { input.focus(); }, 50);
   }
 
-  function closeModal() {
+  function closeModal(fromPopstate) {
     modal.style.display = 'none';
     input.value = '';
     results.innerHTML = '';
+    if (clearBtn) clearBtn.style.display = 'none';
+    if (advSection) advSection.style.display = 'none';
+    // Only go back in history if we pushed a state (not already popped)
+    if (!fromPopstate && history.state && history.state.searchModal) {
+      history.back();
+    }
   }
 
   function runSearch(query) {

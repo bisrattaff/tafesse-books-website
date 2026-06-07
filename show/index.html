@@ -615,6 +615,9 @@
               <a href="https://www.academia.edu/116438689/Whence_life_and_Consciousness?sm=b"
                 target="_blank" class="btn btn-primary btn-sm btn-hardbound"
                 style="margin-top: 8px;">Read on Academia.edu &rarr;</a>
+              <a href="books/Whence Life and Consciousness.pdf"
+                target="_blank" class="btn btn-primary btn-sm btn-hardbound"
+                style="margin-top: 8px; margin-left: 6px;">Download PDF &rarr;</a>
             </div>
           </div>
         </div>
@@ -828,13 +831,16 @@
   <div id="search-modal" role="dialog" aria-modal="true" aria-label="Search books">
     <div class="search-card">
       <div class="search-header">
-        <span>Search Books</span>
+        <span>Quick Search</span>
         <button id="search-close" aria-label="Close">&times;</button>
       </div>
-      <input type="text" id="search-input" placeholder="e.g. chess, religion, nuclear, space ..." autocomplete="off">
+      <div class="search-input-wrapper">
+        <input type="text" id="search-input" placeholder="e.g. chess, religion, nuclear, space ..." autocomplete="off">
+        <button class="search-clear-btn" title="Clear">&times;</button>
+      </div>
       <div id="search-results"></div>
       <div class="adv-divider">
-        <button id="adv-toggle-btn">&#9889; Advanced Search (AI-powered)</button>
+        <button id="adv-toggle-btn">&#9889; Ask AI</button>
       </div>
       <div id="adv-search-section">
         <p class="adv-hint">Ask a question in natural language — Claude will search the book content and answer.</p>

@@ -978,7 +978,7 @@ th, td
 #search-btn svg {
   width: 20px;
   height: 20px;
-  stroke: #52d3aa;
+  stroke: #ff7300;
   fill: none;
   stroke-width: 2.5;
   stroke-linecap: round;
@@ -1034,9 +1034,13 @@ th, td
 #search-close:hover {
   color: #333;
 }
+.search-input-wrapper {
+  position: relative;
+  margin-bottom: 14px;
+}
 #search-input {
   width: 100%;
-  padding: 10px 14px;
+  padding: 10px 36px 10px 14px;
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 1em;
@@ -1047,8 +1051,23 @@ th, td
 #search-input:focus {
   border-color: #52d3aa;
 }
+.search-clear-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 1.3em;
+  cursor: pointer;
+  display: none;
+  padding: 0;
+  line-height: 1;
+}
+.search-clear-btn:hover { color: #555; }
 #search-results {
-  margin-top: 14px;
+  margin-top: 0;
 }
 .search-no-results {
   text-align: center;

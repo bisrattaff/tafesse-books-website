@@ -11,11 +11,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (!toggleBtn) return;
 
-  // Show/hide the advanced search panel
+  // Show/hide Ask AI panel; collapse quick search when opening
   toggleBtn.addEventListener('click', function () {
     var hidden = section.style.display === 'none' || section.style.display === '';
     section.style.display = hidden ? 'block' : 'none';
-    if (hidden) input.focus();
+    if (hidden) {
+      var quickResults = document.getElementById('search-results');
+      var quickInput   = document.getElementById('search-input');
+      var clearBtn     = document.querySelector('.search-clear-btn');
+      if (quickResults) quickResults.innerHTML = '';
+      if (quickInput)   quickInput.value = '';
+      if (clearBtn)     clearBtn.style.display = 'none';
+      input.focus();
+    }
   });
 
   // Submit on button click or Enter key

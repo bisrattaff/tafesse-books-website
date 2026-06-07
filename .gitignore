@@ -18,3 +18,8 @@ show/books/
 
 # Windows
 Thumbs.db
+
+# Lambda packaging temp files (delete after deployment)
+lambda/package/
+lambda/lambda-deployment.zip
+lambda/book-text-output/
